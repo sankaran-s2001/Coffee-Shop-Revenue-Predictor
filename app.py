@@ -25,6 +25,8 @@ def load_models():
     except Exception as e:
         st.error(f"Error loading model files: {str(e)}")
         st.stop()
+        
+model, scaler, selector = load_models()
 
 # Configure page
 st.set_page_config(
