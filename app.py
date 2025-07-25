@@ -5,6 +5,7 @@ import joblib
 from PIL import Image
 from datetime import datetime
 import calendar
+import os
 
 @st.cache_resource  # Cache the model loading
 def load_models():
