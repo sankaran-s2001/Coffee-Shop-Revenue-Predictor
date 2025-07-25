@@ -7,31 +7,24 @@ from datetime import datetime
 import calendar
 import os
 
-@st.cache_resource  # Cache the model loading
+@st.cache_resource
 def load_models():
     """Load and cache the ML models and preprocessing objects"""
     try:
-        # Get the directory where the current script is located
-        dir_path = os.path.dirname(os.path.realpath(__file__))
-        
-        # Construct absolute paths to the model files
-        model_path = os.path.join(dir_path, 'coffee_sales_model.pkl')
-        scaler_path = os.path.join(dir_path, 'scaler.pkl')
-        selector_path = os.path.join(dir_path, 'feature_selector.pkl')
-        
-        # Load the files
-        model = joblib.load(model_path)
-        scaler = joblib.load(scaler_path)
-        selector = joblib.load(selector_path)
+        # Simple approach - no os module needed
+        model = joblib.load('coffee_Sales_model.pkl')
+        scaler = joblib.load('scaler.pkl')
+        selector = joblib.load('feature_selector.pkl')
         
         return model, scaler, selector
         
+    except FileNotFoundError as e:
+        st.error(f"Model files not found: {str(e)}")
+        st.error("Please ensure all .pkl files are in the same directory as your app.")
+        st.stop()
     except Exception as e:
         st.error(f"Error loading model files: {str(e)}")
         st.stop()
-
-# Load the models at startup (cached)
-model, scaler, selector = load_models()
 
 # Configure page
 st.set_page_config(
