@@ -1,6 +1,11 @@
-# Coffee Shop Revenue Predictor
+# ☕ Coffee Shop Revenue Predictor
+
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 A simple web app that helps coffee shop owners predict their daily sales using machine learning.
+
+![App Screenshot](app_screenshot.jpg)
 
 **[Live Demo - Try it here!](https://coffee-shop-revenue-predictor.onrender.com)**
 
@@ -123,11 +128,15 @@ Predict Saturday will be busy (\$8,450 revenue) → Schedule 4 staff instead of 
 - Include seasonal trend analysis
 
 
-## Connect With Me
+## ✉️ Contact
 
-- **GitHub**: [your-github-profile]
-- **LinkedIn**: [your-linkedin-profile]
-- **Email**: [your-email]
+**Sankaran S**  
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sankaran-s2001)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sankaran-s21/)  
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sankaran121101@gmail.com)
+
+---
 
 *This project shows how data science can solve real problems for small businesses. Built to help coffee shop owners make smarter decisions with their daily operations.*
 
+⭐ If you find this project useful, please star it!
