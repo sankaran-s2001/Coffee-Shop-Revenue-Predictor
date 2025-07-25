@@ -6,10 +6,31 @@ from PIL import Image
 from datetime import datetime
 import calendar
 
-# Load saved model, scaler, and selector
-model = joblib.load('coffee_sales_model.pkl')
-scaler = joblib.load('scaler.pkl')
-selector = joblib.load('feature_selector.pkl')
+@st.cache_resource  # Cache the model loading
+def load_models():
+    """Load and cache the ML models and preprocessing objects"""
+    try:
+        # Get the directory where the current script is located
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        
+        # Construct absolute paths to the model files
+        model_path = os.path.join(dir_path, 'coffee_sales_model.pkl')
+        scaler_path = os.path.join(dir_path, 'scaler.pkl')
+        selector_path = os.path.join(dir_path, 'feature_selector.pkl')
+        
+        # Load the files
+        model = joblib.load(model_path)
+        scaler = joblib.load(scaler_path)
+        selector = joblib.load(selector_path)
+        
+        return model, scaler, selector
+        
+    except Exception as e:
+        st.error(f"Error loading model files: {str(e)}")
+        st.stop()
+
+# Load the models at startup (cached)
+model, scaler, selector = load_models()
 
 # Configure page
 st.set_page_config(
