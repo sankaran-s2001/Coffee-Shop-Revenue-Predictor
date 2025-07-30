@@ -14,6 +14,18 @@ def get_base64_of_image(image_path):
 
 img_base64 = get_base64_of_image("background.jpg")
 
+st.markdown(f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{img_base64}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }}
+    </style>
+""", unsafe_allow_html=True)
+
+
 @st.cache_resource
 def load_models():
     """Load and cache the ML models and preprocessing objects"""
