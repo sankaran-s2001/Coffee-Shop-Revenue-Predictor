@@ -5,7 +5,7 @@
 
 A simple web app that helps coffee shop owners predict their daily sales using machine learning.
 
-![App Screenshot](app_screenshot.jpg)
+![App Screenshot](app_screenshot1.jpg)
 
 **[Live Demo - Try it here!](https://coffee-shop-revenue-predictor.onrender.com)**
 
