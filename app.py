@@ -6,6 +6,13 @@ from PIL import Image
 from datetime import datetime
 import calendar
 import os
+import base64
+
+def get_base64_of_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode()
+
+img_base64 = get_base64_of_image("background.jpg")
 
 @st.cache_resource
 def load_models():
