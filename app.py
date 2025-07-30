@@ -17,10 +17,25 @@ img_base64 = get_base64_of_image("background.jpg")
 st.markdown(f"""
     <style>
     .stApp {{
+        position: relative;
         background-image: url("data:image/jpg;base64,{img_base64}");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+    }}
+    .stApp::before {{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.55);
+        z-index: 0;
+    }}
+    .block-container {{
+        position: relative;
+        z-index: 1;
     }}
     </style>
 """, unsafe_allow_html=True)
